@@ -9,6 +9,8 @@ import {
   MovieBox,
   MovieInfo,
   Title,
+  LinkCast,
+  LinkReviews,
 } from './MovieDetails.styled';
 
 import { HiArrowNarrowLeft } from 'react-icons/hi';
@@ -63,15 +65,15 @@ const MovieDetails = () => {
         <h4>Additional information</h4>
         <ul>
           <li>
-            <Link to="cast" state={{ ...location.state }}>
+            <LinkCast to="cast" state={{ ...location.state }}>
               Cast
-            </Link>
+            </LinkCast>
           </li>
           <li>
             {' '}
-            <Link to="reviews" state={{ ...location.state }}>
+            <LinkReviews to="reviews" state={{ ...location.state }}>
               Reviews
-            </Link>
+            </LinkReviews>
           </li>
         </ul>
       </InfoBox>

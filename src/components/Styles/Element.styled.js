@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-const SearchBox = styled.div``;
+const SearchBox = styled.div`
+  // background-color: #bb9c95;
+`;
 
  
 
@@ -11,7 +13,7 @@ const Form = styled.form`
   height: 30px;
   max-width: 300px;
   background-color: #fff;
-  border-radius: 3px;
+  border-radius: 13px;
   overflow: hidden;
   margin-top: 8px;
 `;
