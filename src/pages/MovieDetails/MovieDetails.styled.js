@@ -46,31 +46,33 @@ export const LinkBack = styled(Link)`
   color: white;
 `;
 export const InfoBox = styled.div`
+  
   padding: 20px;
   border-bottom: solid 1px grey;
 `;
 
 
-// export const LinkCast = styled(Link)`
-//   text-decoration: none;
-//   display: blok;
-//   font-size: 14px;
-//   align-items: center;
-//   column-gap: 10px;
-//   color: white;
-//    &:hover,
-//   &:focus {
-//    color: #0b0c0c;
-// `;
 
-// export const LinkReviews = styled(Link)`
-//   text-decoration: none;
-//   display: blok;
-//   font-size: 14px;
-//   align-items: center;
-//   column-gap: 10px;
-//   color: white;
-//    &:hover,
-//   &:focus {
-//    color: #0b0c0c;
-// `;
+export const LinkCast = styled(Link)`
+  text-decoration: none;
+  display: blok;
+  font-size: 14px;
+  align-items: center;
+  column-gap: 10px;
+  color: white;
+   &:hover,
+  &:focus {
+   color: #0b0c0c;
+`;
+
+export const LinkReviews = styled(Link)`
+  text-decoration: none;
+  display: blok;
+  font-size: 14px;
+  align-items: center;
+  column-gap: 10px;
+  color: white;
+   &:hover,
+  &:focus {
+   color: #0b0c0c;
+`;
