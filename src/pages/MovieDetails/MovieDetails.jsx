@@ -1,7 +1,7 @@
 import { useParams, useLocation, Outlet } from 'react-router-dom';
 import { getMovieDetails } from '../../services/apiService';
 import { useState, useEffect } from 'react';
-
+import image from '../../components/Img/no_image.jpg';
 import {
   Button,
   GenresList,
@@ -42,7 +42,7 @@ const MovieDetails = () => {
           src={
             poster_path
               ? `https://image.tmdb.org/t/p/w300${poster_path}`
-              : `https://www.suryalaya.org/images/no_image.jpg`
+              : `${image}`
           }
           width={320}
           height={380}
