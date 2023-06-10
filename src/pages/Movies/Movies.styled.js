@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+ import styled from 'styled-components';
 // import { Link } from 'react-router-dom';
 
 // export const MovieLink = styled(Link)`
@@ -12,6 +12,6 @@ import styled from 'styled-components';
 // `;
 
 export const main = styled.div`
-  //   display: flex;
+    //  display: flex;
   background-color: #bb9c95;
 `;

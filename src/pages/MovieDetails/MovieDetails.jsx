@@ -1,6 +1,7 @@
 import { useParams, useLocation, Outlet } from 'react-router-dom';
 import { getMovieDetails } from '../../services/apiService';
 import { useState, useEffect } from 'react';
+// import backgroundImage from '../../components/Img/no_image.jpg';
 import {
   Button,
   GenresList,

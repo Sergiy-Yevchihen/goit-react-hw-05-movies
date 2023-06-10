@@ -24,7 +24,7 @@ const Movies = () => {
       if (!data.results.length) {
         setIsLoading(false);
         setError(true);
-        return console.log(
+        return alert(
           'There is no movies with this request. Please, try again'
         );
       }

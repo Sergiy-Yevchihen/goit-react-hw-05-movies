@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getMovieCredits } from './../../services/apiService';
 import { CastItem, CastList, Character, Name } from './Cast.styled';
+// import Image from '../Img/no_image.jpg';
 
 const Cast = () => {
   const [castList, setCastList] = useState([]);
@@ -18,7 +19,8 @@ const Cast = () => {
                 src={
                   profile_path
                     ? `https://image.tmdb.org/t/p/w200${profile_path}`
-                    : `http://www.suryalaya.org/images/no_image.jpg`
+                    : `https://www.suryalaya.org/images/no_image.jpg`
+                  // https://upload.wikimedia.org/wikipedia/commons/9/9e/Placeholder_Person.jpg
                 }
                 alt="actor"
                 loading="lazy"
