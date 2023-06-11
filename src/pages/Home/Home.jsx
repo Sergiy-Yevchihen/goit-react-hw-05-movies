@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { MovieLink, MovieList, Title } from './Home.styled';
+import { Title } from './Home.styled';
 import { getTrending } from '../../services/apiService';
- import { Loader } from 'components/Loader/Loader';
+import { Loader } from 'components/Loader/Loader';
+import MovieList from '../MovieList/MovieList';
 
 const Home = () => {
   const [trendMovies, setTrendMovies] = useState([]);
-  const location = useLocation();
+
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -20,16 +20,9 @@ const Home = () => {
   return (
     <main>
       <Title>Top Movies for today</Title>
-      <MovieList>
-        {trendMovies.map(movie => (
-          <li key={movie.id}>
-            <MovieLink to={`/movies/${movie.id}`} state={{ from: location }}>
-              {movie.original_title || movie.name}
-            </MovieLink>
-          </li>
-        ))}
-        {isLoading && <Loader />}
-      </MovieList>
+      <MovieList trendMovies={trendMovies} />
+
+      {isLoading && <Loader />}
     </main>
   );
 };

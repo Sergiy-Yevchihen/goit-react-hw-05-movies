@@ -1,12 +1,12 @@
-import { Loader } from 'components/Loader/Loader';
- import { MovieList, MovieLink } from 'pages/Home/Home.styled';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { searchMovies } from './../../services/apiService';
-import { useSearchParams, useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { SearchBar } from './../../components/SearchBar/SearchBar';
+import { Loader } from 'components/Loader/Loader';
+import MovieList from '../MovieList/MovieList';
 
 const Movies = () => {
-  const location = useLocation();
+  // const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const movieName = searchParams.get('movieName') ?? '';
   const [moviesList, setMoviesList] = useState([]);
@@ -25,7 +25,7 @@ const Movies = () => {
         setIsLoading(false);
         setError(true);
         return alert(
-          'There is no movies with this request. Please, try again'
+          'There are no movies with this request. Please try again.'
         );
       }
       setError(false);
@@ -40,22 +40,13 @@ const Movies = () => {
     setSearchParams({ movieName: searchForm.elements.movieName.value });
     searchForm.reset();
   };
+
   return (
     <main>
       <SearchBar onSubmit={handleSubmit} />
-      {error && <p>There is no movies with this request. Please, try again</p>}
-      <MovieList>
-        {moviesList.map(movie => {
-          return (
-            <li key={movie.id}>
-              <MovieLink to={`/movies/${movie.id}`} state={{ from: location }}>
-                {movie.original_title || movie.name}
-              </MovieLink>
-            </li>
-          );
-        })}
-        {isLoading && <Loader />}
-      </MovieList>
+      {error && <p>There are no movies with this request. Please try again.</p>}
+      <MovieList trendMovies={moviesList} />
+      {isLoading && <Loader />}
     </main>
   );
 };
