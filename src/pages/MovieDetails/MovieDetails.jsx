@@ -27,7 +27,7 @@ const MovieDetails = () => {
   }, [movieId]);
 
   if (!movieDetail) {
-    return null;
+    return;
   };
 
   const { original_title, overview, genres, poster_path, vote_average } =
