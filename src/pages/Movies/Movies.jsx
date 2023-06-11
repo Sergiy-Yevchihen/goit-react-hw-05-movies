@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { searchMovies } from './../../services/apiService';
 import { useSearchParams } from 'react-router-dom';
-import { SearchBar } from './../../components/SearchBar/SearchBar';
+import SearchBar from '../../components/SearchBar/SearchBar';
 import { Loader } from 'components/Loader/Loader';
 import MovieList from '../MovieList/MovieList';
 
@@ -34,11 +34,8 @@ const Movies = () => {
     });
   }, [movieName]);
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    const searchForm = e.currentTarget;
-    setSearchParams({ movieName: searchForm.elements.movieName.value });
-    searchForm.reset();
+  const handleSubmit = value => {
+    setSearchParams({ movieName: value });
   };
 
   return (
